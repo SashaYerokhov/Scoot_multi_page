@@ -2,14 +2,14 @@
   --neutral-0: hsl(0, 0%, 100%);
   --neutral-300: hsl(0, 0%, 85%);
   --neutral-950: hsl(0, 0%, 0%);
-  --slate-50:hsl(214,37%,96%);
-  --slate-100:hsl(212,41%,93%);
-  --slate-400:hsl(217,12%,62%);
-  --slate-600:hsl(216,17%,35%);
-  --slate-700:hsl(215,14%,23%);
-  --amber-50:hsl(39, 100%, 94%);
-  --amber-40:hsl(40, 97%, 58%);
-  --navy:hsl(223,31%,27%); 
+  --slate-50: hsl(214, 37%, 96%);
+  --slate-100: hsl(212, 41%, 93%);
+  --slate-400: hsl(217, 12%, 62%);
+  --slate-600: hsl(216, 17%, 35%);
+  --slate-700: hsl(215, 14%, 23%);
+  --amber-50: hsl(39, 100%, 94%);
+  --amber-40: hsl(40, 97%, 58%);
+  --navy: hsl(223, 31%, 27%);
 }
 .space-mono-bold {
   font-family: "Space Mono", monospace;
@@ -23,19 +23,19 @@
   font-style: normal;
 }
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 *,
 ::after,
 ::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 body {
-    margin: 0;
-    padding: 0;
-     font-family: "Space Mono", monospace;
-     background: var(--neutral-0);
-     font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", monospace;
+  background: var(--neutral-0);
+  font-size: 1rem;
 }
 img {
   /* To keep the width of the image from going beyond the screen */
@@ -57,13 +57,245 @@ p {
   margin: 0;
 }
 button {
+  padding: 0;
   border: none;
   outline: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.conatianer {
-    box-sizing: border-box;
-    max-width: 1130px;
-    margin-inline: auto;
-    padding-inline: 10px;
+.container {
+  box-sizing: border-box;
+  max-width: 1130px;
+  margin-inline: auto;
+  padding-inline: 10px;
 }
+.primary__btn {
+  width: 182px;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: var(--amber-40);
+  font-size: 15px;
+  line-height: 165%;
+  color: var(--neutral-0);
+  transition:
+    border 450ms ease-in-out,
+    background 450ms ease,
+    color 450ms ease-in;
+  &:hover {
+    border: 3px solid var(--amber-40);
+    background: transparent;
+    color: var(--amber-40);
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 56px;
+  padding-block: 19.5px;
+  #open__button,
+  #close__button {
+    display: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    /* заставит навигацию занять все свободное место */
+    flex-grow: 1;
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      column-gap: 32px;
+      a {
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 165%;
+        color: var(--slate-400);
+        transition: color 350ms ease-in-out;
+        &:hover {
+          color: var(--amber-40);
+        }
+      }
+    }
+    .primary__btn {
+      margin-inline-start: auto;
+    }
+  }
+  #overlay {
+    background: var(--neutral-950);
+    opacity: 0.75;
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
+  }
+}
+.main {
+  .hero {
+    position: relative;
+    height: 650px;
+    background-image: url("../assets/images/home-hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    overflow: hidden;
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("../assets/patterns/white-circles.svg");
+      background-repeat: no-repeat;
+      width: 452px;
+      height: 151px;
+      bottom: 100px;
+      right: -215px;
+      /* left: 710px; */
+    }
+    div {
+      width: 500px;
+      padding-block: 150px;
+      margin-inline-start: 165px;
+      position: relative;
+      h1 {
+        font-size: 56px;
+        line-height: 100%;
+        letter-spacing: -2.5px;
+        color: var(--neutral-0);
+        margin-block-end: 40px;
+      }
+      p {
+        width: 500px;
+        font-size: 15px;
+        line-height: 165%;
+        color: var(--neutral-0);
+        padding-inline-start: 95px;
+        margin-block-end: 40px;
+      }
+      .primary__btn {
+        margin-inline-start: 95px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        background-image: url("../assets/patterns/line.svg");
+        width: 203px;
+        height: 15px;
+        bottom: 295px;
+        left: -125px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../assets/patterns/right-arrow.svg");
+        width: 452px;
+        height: 151px;
+        bottom: 170px;
+        left: 560px;
+      }
+    }
+  }
+}
+/* 420px */
+@media (max-width: 26.25rem) {
+  .container {
+    max-width: 331px;
+  }
+
+  .header {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 0; */
+    column-gap: 0;
+    /* position: relative;
+    z-index: 11; */
+    #open__button {
+      display: block;
+      /* Занимает 1 часть пространства слева */
+      /* flex: 1; */
+      /* Становится первым визуально */
+      /* order: 1; */
+      /* Выравнивание иконки внутри своей зоны */
+      /* text-align: left; */
+      /* background: none; */
+      /* border: none; */
+    }
+    .header__logo {
+      /* Занимает 1 часть пространства по центру */
+      flex: 1;
+      /* Становится вторым визуально */
+      /* order: 2; */
+      display: flex;
+      /* Центрируем само лого внутри зоны */
+      justify-content: center;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      /* right: -100%; */
+      flex-direction: column;
+      /* Чтобы элементы могли растягиваться по ширине */
+      align-items: stretch;
+      /* Пример высоты за вычетом шапки */
+      height: 600px;
+      padding: 60px 32px 24px;
+      z-index: 10;
+      background: var(--slate-700);
+      ul {
+        flex-direction: column;
+        gap: 24px 0;
+        align-items: flex-start;
+        li {
+          a {
+            font-size: 18px;
+            line-height: 135%;
+            letter-spacing: -0.803571px;
+            color: var(--slate-100);
+          }
+        }
+      }
+      .primary__btn {
+        width: 152px;
+        /* Сбрасываем горизонтальный авто-отступ */
+        margin-inline-start: 0;
+        /* Толкает кнопку к самому низу мобильного меню */
+        margin-block-start: auto;
+        /* Центрируем кнопку по горизонтали, если нужно */
+        margin-inline: auto;
+      }
+    }
+
+    nav.show {
+      top: 68px;
+      left: 0;
+      & ~ #overlay {
+        height: 600px;
+        margin-block-start: 68px;
+        display: block;
+      }
+    }
+    #open__button:has(~ .show) {
+      display: none;
+    }
+    #close__button:has(~ .show) {
+      display: block;
+      /* margin-inline-end: auto; */
+    }
+  }
+}
+
+/* Примечание: Вместо margin-block-end: auto для списка лучше использовать margin-block-start: auto для кнопки — это более надежно, так как именно кнопка «выталкивает» себя вниз, оставляя ссылки наверху. */
+
+/* 
+И начнем мы со свойства flex-grow. Это свойство позволяет указать коэффициент увеличения элемента относительно свободного пространства внутри flex-контейнера. Свободное пространство – это оставшееся незаполненное место внутри flex-контейнера, которое подсвечено желтым цветом ниже.
+
+По-умолчанию flex-grow имеет значение 0. Именно поэтому изначально элементы никак не делят пространство между собой. Если укажем 1, то все элементы становятся одинаковыми, потому что они равномерно разделили между собой это свободное место.
+*/
+
+/* 
+Нужно узнать как можно нанести надпись на рисунок без position - а через флекс или грид
+*/
