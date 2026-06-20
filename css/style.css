@@ -1,0 +1,69 @@
+:root {
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(0, 0%, 85%);
+  --neutral-950: hsl(0, 0%, 0%);
+  --slate-50:hsl(214,37%,96%);
+  --slate-100:hsl(212,41%,93%);
+  --slate-400:hsl(217,12%,62%);
+  --slate-600:hsl(216,17%,35%);
+  --slate-700:hsl(215,14%,23%);
+  --amber-50:hsl(39, 100%, 94%);
+  --amber-40:hsl(40, 97%, 58%);
+  --navy:hsl(223,31%,27%); 
+}
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+.lexend-deca-regular {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+    box-sizing: border-box;
+}
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+     font-family: "Space Mono", monospace;
+     background: var(--neutral-0);
+     font-size: 1rem;
+}
+img {
+  /* To keep the width of the image from going beyond the screen */
+  max-width: 100%;
+  display: block;
+}
+ul {
+  margin-block: 0;
+  padding-inline-start: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+button {
+  border: none;
+  outline: none;
+}
+
+.conatianer {
+    box-sizing: border-box;
+    max-width: 1130px;
+    margin-inline: auto;
+    padding-inline: 10px;
+}
