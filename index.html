@@ -45,13 +45,15 @@
         </svg>
       </button>
       <div class="header__logo">
-        <a href=""><img src="./assets/logo.svg" alt="logo scoot" /></a>
+        <a href="index.html"
+          ><img src="./assets/logo.svg" alt="logo scoot"
+        /></a>
       </div>
       <nav id="navbar">
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Location</a></li>
-          <li><a href="#">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="locations.html">Location</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
         <button class="primary__btn">Get Scootin</button>
       </nav>
@@ -59,6 +61,17 @@
     </header>
     <main class="main">
       <section class="hero">
+        <picture>
+          <source
+            media="(max-width: 420px)"
+            srcset="./assets/images/home-hero-mobile.jpg"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./assets/images/home-hero-tablet.jpg"
+          />
+          <img src="./assets/images/home-hero-desktop.jpg" alt="home hero" />
+        </picture>
         <div class="container">
           <h1>Scooter sharing made simple</h1>
           <p class="lexend-deca-regular">
@@ -69,25 +82,93 @@
           <button class="primary__btn">Get Scootin</button>
         </div>
       </section>
-
-      Get Scootin Locate with app Use the app to find the nearest scooter to
-      you. We are continuously placing scooters in the areas with most demand,
-      so one should never be too far away. Pick your scooter We show the most
-      important info for the scooters closest to you. So you know how much
-      charge they have left and can see roughly how much it will cost. Enjoy the
-      ride Scan the QR code and the bike will unlock. Retract the cable lock,
-      put on a helmet, and you’re off! Always lock bikes away from walkways and
-      accessibility ramps. Easy to use riding telemetry The Scoot app is
-      available with riding telemetry. This means it can show you your average
-      speed, how long you've been using the scooter, your traveling distance,
-      and many more things all in an easy to use app. Learn More Coming to a
-      city near you Scoot is available in 4 major cities so far. We’re expanding
-      rapidly, so be sure to let us know if you want to see us in your hometown.
-      We’re aiming to let our scooters loose on 23 cities over the coming year.
-      Learn More Zero hassle payments Our payment is as easy as one two three.
-      We accept most credit cards and debit cards. You can also link your PayPal
-      account inside the app. Need to pay later? No worries! You can defer
-      payment for up to a month. Learn More Sign up and Scoot off today
+      <section class="services">
+        <ul class="services__block container">
+          <li>
+            <img src="./assets/icons/locate.svg" alt="icon locate" />
+            <div>
+              <h4>Locate with app</h4>
+              <p>
+                Use the app to find the nearest scooter to you. We are
+                continuously placing scooters in the areas with most demand, so
+                one should never be too far away.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="./assets/icons/scooter.svg" alt="icon scooter" />
+            <div>
+              <h4>Pick your scooter</h4>
+              <p>
+                We show the most important info for the scooters closest to you.
+                So you know how much charge they have left and can see roughly
+                how much it will cost.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="./assets/icons/ride.svg" alt="icon ride" />
+            <div>
+              <h4>Enjoy the ride</h4>
+              <p>
+                Scan the QR code and the bike will unlock. Retract the cable
+                lock, put on a helmet, and you’re off! Always lock bikes away
+                from walkways and accessibility ramps.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="functions">
+        <div class="functions__app">
+          <div class="functions__app-content container">
+            <img src="./assets/images/telemetry.jpg" alt="images telemetry" />
+            <div class="functions-content">
+              <h2>Easy to use riding telemetry</h2>
+              <p>
+                The Scoot app is available with riding telemetry. This means it
+                can show you your average speed, how long you've been using the
+                scooter, your traveling distance, and many more things all in an
+                easy to use app.
+              </p>
+              <button class="primary__btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <div class="functions__coming">
+          <div class="functions__coming-content container">
+            <img src="./assets/images/near-you.jpg" alt="image near you" />
+            <div class="functions-content">
+              <h2>Coming to a city near you</h2>
+              <p>
+                Scoot is available in 4 major cities so far. We’re expanding
+                rapidly, so be sure to let us know if you want to see us in your
+                hometown. We’re aiming to let our scooters loose on 23 cities
+                over the coming year.
+              </p>
+              <button class="primary__btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <div class="functions__payments">
+          <div class="functions__payments-content container">
+            <img src="./assets/images/payments.jpg" alt="images payments" />
+            <div class="functions-content">
+              <h2>Zero hassle payments</h2>
+              <p>
+                Our payment is as easy as one two three. We accept most credit
+                cards and debit cards. You can also link your PayPal account
+                inside the app. Need to pay later? No worries! You can defer
+                payment for up to a month.
+              </p>
+              <button class="primary__btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Sign up and Scoot off today</h2>
+      </section>
     </main>
     <footer class="footer">About Location Careers</footer>
     <script src="app.js" defer></script>

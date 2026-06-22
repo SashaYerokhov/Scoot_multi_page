@@ -35,7 +35,7 @@ body {
   padding: 0;
   font-family: "Space Mono", monospace;
   background: var(--neutral-0);
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 img {
   /* To keep the width of the image from going beyond the screen */
@@ -63,7 +63,9 @@ button {
   background: transparent;
   cursor: pointer;
 }
-
+li {
+  list-style-type: none;
+}
 .container {
   box-sizing: border-box;
   max-width: 1130px;
@@ -112,7 +114,6 @@ button {
       column-gap: 32px;
       a {
         text-decoration: none;
-        font-size: 15px;
         line-height: 165%;
         color: var(--slate-400);
         transition: color 350ms ease-in-out;
@@ -136,12 +137,14 @@ button {
 }
 .main {
   .hero {
+    width: 1440px;
+    min-height: 650px;
+    margin-inline: auto;
+    display: grid;
+    /* Заставляем картинку и контент занимать
+    одну и ту же область друг над другом */
+    grid-template-areas: "hero";
     position: relative;
-    height: 650px;
-    background-image: url("../assets/images/home-hero-desktop.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     overflow: hidden;
     &::after {
       position: absolute;
@@ -151,40 +154,35 @@ button {
       width: 452px;
       height: 151px;
       bottom: 100px;
-      right: -215px;
-      /* left: 710px; */
+      right: -255px;
+    }
+    picture {
+      grid-area: hero;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     div {
+      grid-area: hero;
       width: 500px;
-      padding-block: 150px;
-      margin-inline-start: 165px;
+      /* контент всегда поверх картинки */
+      z-index: 2;
+      text-align: start;
+      color: var(--neutral-0);
+      margin: 150px 0 150px 165px;
       position: relative;
-      h1 {
-        font-size: 56px;
-        line-height: 100%;
-        letter-spacing: -2.5px;
-        color: var(--neutral-0);
-        margin-block-end: 40px;
-      }
-      p {
-        width: 500px;
-        font-size: 15px;
-        line-height: 165%;
-        color: var(--neutral-0);
-        padding-inline-start: 95px;
-        margin-block-end: 40px;
-      }
-      .primary__btn {
-        margin-inline-start: 95px;
-      }
       &::before {
         position: absolute;
         content: "";
         background-image: url("../assets/patterns/line.svg");
         width: 203px;
         height: 15px;
-        bottom: 295px;
-        left: -125px;
+        bottom: 150px;
+        left: -165px;
       }
       &::after {
         position: absolute;
@@ -192,8 +190,158 @@ button {
         background-image: url("../assets/patterns/right-arrow.svg");
         width: 452px;
         height: 151px;
-        bottom: 170px;
+        bottom: 20px;
         left: 560px;
+      }
+      h1 {
+        font-size: clamp(40px, calc(0.592rem + 4.588vw), 56px);
+        line-height: 100%;
+        letter-spacing: -2.5px;
+        margin-block-end: 40px;
+      }
+      p {
+        width: 500px;
+        line-height: 165%;
+        padding-inline-start: 95px;
+        margin-block-end: 40px;
+      }
+      .primary__btn {
+        margin-inline-start: 95px;
+      }
+    }
+  }
+  .services {
+    margin-block: 160px 203px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 975px;
+      height: 15px;
+      background-color: var(--slate-100);
+      top: 40px;
+      left: 0;
+    }
+    .services__block {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+      li {
+        width: 350px;
+        min-height: 288px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 40px;
+        z-index: 2;
+        div {
+          h4 {
+            font-size: 24px;
+            line-height: 115%;
+            letter-spacing: -1px;
+            color: var(--slate-600);
+            margin-block-end: 24px;
+          }
+          p {
+            line-height: 165%;
+            color: var(--slate-400);
+          }
+        }
+      }
+    }
+  }
+  .functions {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto 160px auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 160px;
+    .functions-content {
+      h2 {
+        font-size: clamp(32px, calc(1rem + 4.6vw), 48px);
+        line-height: 100%;
+        letter-spacing: -2px;
+        color: var(--slate-600);
+        margin-block-end: 24px;
+      }
+      p {
+        line-height: 165%;
+        color: var(--slate-400);
+        margin-block-end: 40px;
+      }
+    }
+    img {
+      width: 445px;
+      height: 445px;
+      border-radius: 50%;
+    }
+    .functions__app {
+      position: relative;
+      background-image: url("../assets/patterns/circle.svg");
+      background-repeat: no-repeat;
+      background-position: 135% 50%;
+      overflow: hidden;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 734px;
+        height: 138px;
+        background-image: url("../assets/patterns/left-downward-arrow.svg");
+        background-repeat: no-repeat;
+        bottom: 20px;
+        right: 0;
+      }
+      .functions__app-content {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        column-gap: 220px;
+      }
+    }
+    .functions__coming {
+      position: relative;
+      background-image: url("../assets/patterns/circle.svg");
+      background-repeat: no-repeat;
+      background-position: -35% 50%;
+      overflow: hidden;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 735px;
+        height: 138px;
+        background-image: url("../assets/patterns/right-arrow.svg");
+        background-repeat: no-repeat;
+        top: 0;
+        left: -105px;
+      }
+      .functions__coming-content {
+        display: flex;
+        align-items: center;
+        column-gap: 220px;
+      }
+    }
+    .functions__payments {
+      position: relative;
+      background-image: url("../assets/patterns/circle.svg");
+      background-repeat: no-repeat;
+      background-position: 135% 50%;
+      overflow: hidden;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 741px;
+        height: 151px;
+        background-image: url("../assets/patterns/left-downward-arrow.svg");
+        background-repeat: no-repeat;
+        top: 75px;
+        right: -380px;
+      }
+      .functions__payments-content {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        column-gap: 220px;
       }
     }
   }
