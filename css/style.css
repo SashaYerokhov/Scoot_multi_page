@@ -134,8 +134,8 @@ h2 {
     }
   }
   #overlay {
-    background: var(--neutral-950);
-    opacity: 0.75;
+    background: var(--slate-700);
+    opacity: 0.8;
     position: fixed;
     inset: 0;
     z-index: 9;
@@ -429,7 +429,6 @@ h2 {
         margin: 0;
         align-self: center;
         justify-self: center;
-
         &::before {
           display: none;
         }
@@ -532,7 +531,6 @@ h2 {
   .container {
     max-width: 331px;
   }
-
   .header {
     /* display: flex;
     justify-content: space-between;
@@ -597,7 +595,6 @@ h2 {
         margin-inline: auto;
       }
     }
-
     nav.show {
       top: 68px;
       left: 0;
@@ -615,6 +612,105 @@ h2 {
       /* margin-inline-end: auto; */
     }
   }
+  .main {
+    .hero {
+      &::after {
+        display: none;
+      }
+      picture {
+        width: 375px;
+        img {
+          width: 375px;
+        }
+      }
+      div {
+        &::after {
+          left: -330px;
+          bottom: -140px;
+        }
+      }
+    }
+    .services {
+      padding-block: 116px 114px;
+      &::after {
+        display: none;
+      }
+      .services__block {
+        row-gap: 48px;
+        li {
+          width: 311px;
+          align-items: center;
+          flex-direction: column;
+          img {
+            width: 56px;
+            height: 56px;
+            margin-block-end: 24px;
+          }
+          div {
+            text-align: center;
+            h4 {
+              margin-block-end: 30px;
+            }
+          }
+        }
+      }
+    }
+    .functions {
+      row-gap: 56px;
+      margin-block-end: 116px;
+      img {
+        width: 311px;
+        height: 311px;
+      }
+      .functions-content {
+        h2 {
+          margin-block-end: 32px;
+        }
+        p {
+          margin-block-end: 32px;
+        }
+      }
+      .functions__app {
+        background-image: none;
+        &::after {
+          right: 0;
+          left: 40px;
+          top: 170px;
+        }
+      }
+      .functions__coming {
+        background-image: none;
+        &::before {
+          left: -195px;
+        }
+      }
+      .functions__payments {
+        background-image: none;
+        &::before {
+          top: 5px;
+          right: -485px;
+        }
+      }
+    }
+    .sign {
+      height: 320px;
+      background-position: 80% 100%;
+      padding-inline: 0;
+      h2 {
+        width: 311px;
+      }
+    }
+  }
+  .footer {
+    flex-direction: column;
+    row-gap: 88px;
+    .footer__container {
+      flex-direction: column;
+      gap: 44px 0;
+      ul {
+        flex-direction: column;
+        gap: 16px 0;
+      }
+    }
+  }
 }
-
-
