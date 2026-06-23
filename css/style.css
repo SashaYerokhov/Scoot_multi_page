@@ -66,6 +66,14 @@ button {
 li {
   list-style-type: none;
 }
+a {
+  text-decoration: none;
+}
+h2 {
+  font-size: clamp(32px, calc(1rem + 4.6vw), 48px);
+  line-height: 100%;
+  letter-spacing: -2px;
+}
 .container {
   box-sizing: border-box;
   max-width: 1130px;
@@ -113,7 +121,6 @@ li {
       align-items: center;
       column-gap: 32px;
       a {
-        text-decoration: none;
         line-height: 165%;
         color: var(--slate-400);
         transition: color 350ms ease-in-out;
@@ -137,7 +144,7 @@ li {
 }
 .main {
   .hero {
-    width: 1440px;
+    max-width: 1440px;
     min-height: 650px;
     margin-inline: auto;
     display: grid;
@@ -259,9 +266,6 @@ li {
     row-gap: 160px;
     .functions-content {
       h2 {
-        font-size: clamp(32px, calc(1rem + 4.6vw), 48px);
-        line-height: 100%;
-        letter-spacing: -2px;
         color: var(--slate-600);
         margin-block-end: 24px;
       }
@@ -343,6 +347,183 @@ li {
         flex-direction: row-reverse;
         column-gap: 220px;
       }
+    }
+  }
+  .sign {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    column-gap: 338px;
+    height: 300px;
+    background-color: var(--slate-600);
+    padding-inline: 165px;
+    background-image: url("../assets/patterns/semi-circles.svg");
+    background-repeat: no-repeat;
+    background-position: 150% 100%;
+    h2 {
+      width: 415px;
+      color: var(--neutral-0);
+    }
+    .sign__images {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+    }
+  }
+}
+.footer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--neutral-950);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 33.72px;
+  padding-inline: 165px;
+  .footer__container {
+    display: flex;
+    align-items: center;
+    column-gap: 65px;
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 32px;
+      a {
+        line-height: 165%;
+        color: var(--slate-400);
+        transition: color 350ms ease-in-out;
+        &:hover {
+          color: var(--amber-40);
+        }
+      }
+    }
+  }
+  .footer__social {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+  }
+}
+/* 768px */
+@media (max-width: 48rem) {
+  .container {
+    max-width: 709px;
+  }
+  .main {
+    .hero {
+      &::after {
+        bottom: -45px;
+      }
+      picture {
+        width: 768px;
+        height: 650px;
+        img {
+          width: 768px;
+          height: 650px;
+        }
+      }
+      div {
+        margin: 0;
+        align-self: center;
+        justify-self: center;
+
+        &::before {
+          display: none;
+        }
+        &::after {
+          left: -250px;
+          bottom: -160px;
+        }
+        h1 {
+          text-align: center;
+          margin-block-end: 24px;
+        }
+        p {
+          max-width: 573px;
+          text-align: center;
+          padding-inline-start: 0;
+          margin-block-end: 32px;
+        }
+        .primary__btn {
+          margin-inline: auto;
+        }
+      }
+    }
+    .services {
+      margin: 0;
+      padding-block: 122px 129px;
+      &::after {
+        width: 15px;
+        height: 513px;
+        left: 125px;
+        top: 0;
+      }
+      .services__block {
+        flex-direction: column;
+        gap: 40px 0;
+        li {
+          width: 573px;
+          min-height: 127px;
+          flex-direction: row;
+          gap: 0 80px;
+        }
+      }
+    }
+    .functions {
+      row-gap: 125px;
+      .functions-content {
+        max-width: 573px;
+        text-align: center;
+        h2 {
+          margin-block-end: 40px;
+        }
+        .primary__btn {
+          margin: 0 auto;
+        }
+      }
+      .functions__app {
+        background-position: 215% 0;
+        &::after {
+          bottom: 0;
+          top: 300px;
+        }
+        .functions__app-content {
+          flex-direction: column;
+          gap: 64px 0;
+        }
+      }
+      .functions__coming {
+        background-position: -125% 0;
+        .functions__coming-content {
+          flex-direction: column;
+          gap: 64px 0;
+        }
+      }
+      .functions__payments {
+        background-position: 215% 0;
+        .functions__payments-content {
+          flex-direction: column;
+          gap: 64px 0;
+        }
+      }
+    }
+    .sign {
+      flex-direction: column;
+      gap: 40px 0;
+      padding-block: 54px;
+      background-position: 50% 100%;
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+  .footer {
+    padding-inline: 39.5px;
+    .footer__container {
+      column-gap: 59px;
     }
   }
 }
@@ -436,14 +617,4 @@ li {
   }
 }
 
-/* Примечание: Вместо margin-block-end: auto для списка лучше использовать margin-block-start: auto для кнопки — это более надежно, так как именно кнопка «выталкивает» себя вниз, оставляя ссылки наверху. */
 
-/* 
-И начнем мы со свойства flex-grow. Это свойство позволяет указать коэффициент увеличения элемента относительно свободного пространства внутри flex-контейнера. Свободное пространство – это оставшееся незаполненное место внутри flex-контейнера, которое подсвечено желтым цветом ниже.
-
-По-умолчанию flex-grow имеет значение 0. Именно поэтому изначально элементы никак не делят пространство между собой. Если укажем 1, то все элементы становятся одинаковыми, потому что они равномерно разделили между собой это свободное место.
-*/
-
-/* 
-Нужно узнать как можно нанести надпись на рисунок без position - а через флекс или грид
-*/
