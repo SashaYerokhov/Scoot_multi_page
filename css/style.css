@@ -461,6 +461,7 @@ h2 {
     }
   }
   .our {
+    margin-block-end: 123px;
     h2 {
       text-align: center;
       margin-block-end: 103px;
@@ -469,31 +470,135 @@ h2 {
       display: flex;
       align-items: center;
       column-gap: 30px;
-      position: relative;
-      img {
-        border-radius: 50%;
-      }
-      span {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        position: absolute;
-        width: 96px;
-        height: 96px;
-        left: 80px;
-        bottom: 35px;
-        background: var(--amber-40);
-        border-radius: 48px;
-        font-size: 24px;
-        line-height: 115%;
-        text-align: center;
-        letter-spacing: -1px;
-        color: var(--slate-600);
+      height: 454px;
+      div {
+        max-width: 350px;
+        /* height: 454px; */
+        position: relative;
+        /* Увеличиваем счётчик для каждого div */
+        counter-increment: numbers;
+        ::before {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          /* Ключевое изменение: задаем формат с ведущим нулем */
+          content: counter(numbers, decimal-leading-zero);
+          width: 96px;
+          height: 96px;
+          /* Позиционируем от верхнего края картинки */
+          left: 50%;
+          /* Идеально центрирует по горизонтали */
+          transform: translateX(-50%);
+          /* left: 120px; */
+          top: 185px;
+          /* bottom: 110px; */
+          background: var(--amber-40);
+          border-radius: 48px;
+          font-size: 24px;
+          line-height: 115%;
+          text-align: center;
+          letter-spacing: -1px;
+          color: var(--slate-600);
+        }
+        img {
+          border-radius: 50%;
+          margin: 0 auto 60px auto;
+          /* СОЗДАЕМ ПРОБЕЛ ТУТ: сдвигаем заголовок вниз, освобождая место под круг */
+          /* margin-block-end: 60px; */
+        }
+        h4 {
+          font-size: 24px;
+          line-height: 115%;
+          text-align: center;
+          letter-spacing: -1px;
+          color: var(--slate-600);
+          margin-block-end: 24px;
+        }
+        p {
+          line-height: 165%;
+          text-align: center;
+          color: var(--slate-400);
+        }
       }
     }
   }
+  .faqs {
+    margin-block-end: 160px;
+    h2 {
+      text-align: center;
+      margin-block-end: 64px;
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 100%;
+      letter-spacing: -1.75px;
+      color: var(--slate-600);
+    }
+    .works {
+      display: flex;
+      align-items: flex-start;
+      column-gap: 30px;
+      margin-block-end: 64px;
+    }
+    .accordion {
+      max-width: 730px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      align-items: center;
+      .accordion__item {
+        background: var(--slate-100);
+        padding: 32px 40px;
+        h5 {
+          font-size: 24px;
+          line-height: 115%;
+          letter-spacing: -1px;
+          color: var(--slate-600);
+          /* margin-block-end: 24px; */
+          .accordion__trigger {
+            /* width: 100% заставляет кнопку занять всю ширину заголовка <h5>, иначе она сожмется по размеру текста. */
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+          }
+        }
+        p {
+          line-height: 165%;
+          color: var(--slate-600);
+        }
+      }
+      .accordion__panel {
+        max-height: 0;
+        visibility: hidden;
+        color: transparent;
+        transition:
+          max-height 300ms ease-in-out,
+          visibility 300ms ease-in-out,
+          color 300ms ease-in-out;
+      }
+      .active h5 {
+        margin-bottom: 24px;
+      }
+      .active .accordion__panel {
+        max-height: 500px;
+        visibility: visible;
+      }
+      .active .accordion__trigger svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    .safe {
+      display: flex;
+      align-items: flex-start;
+      column-gap: 30px;
+    }
+  }
+
   .sign {
     max-width: 1440px;
     width: 100%;
@@ -565,6 +670,7 @@ h2 {
       picture {
         width: 768px;
         height: 650px;
+        margin-inline: auto;
         img {
           width: 768px;
           height: 650px;
@@ -772,6 +878,9 @@ h2 {
         &::after {
           left: -330px;
           bottom: -140px;
+        }
+        p {
+          max-width: 311px;
         }
       }
     }
