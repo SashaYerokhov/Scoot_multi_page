@@ -65,10 +65,55 @@
       <div id="overlay" aria-hidden="true"></div>
     </header>
     <main class="main">
-      Locations New York London Yokohama Jakarta Your city not listed? If you’d
-      like to see Scoot in your hometown, be sure to let us know. We track
-      requests and plan launches based on demand. Feel free to message us by
-      clicking the link or messaging us on social. Message Us
+      <section class="locations-hero">
+        <picture>
+          <source
+            media="(max-width: 440px)"
+            srcset="./assets/images/careers-location-hero-mobile.jpg"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./assets/images/careers-locations-hero-tablet.jpg"
+          />
+          <img
+            src="./assets/images/careers-locations-hero-desktop.jpg"
+            alt="home hero"
+          />
+        </picture>
+        <div>
+          <h1>Locations</h1>
+        </div>
+      </section>
+      <sections class="map container">
+        <picture>
+          <source
+            media="(max-width: 440px)"
+            srcset="./assets/images/world-map-mobile.png"
+          />
+          <source
+            media="(max-width: 768px)"
+            srcset="./assets/images/world-map-tablet.png"
+          />
+          <img src="./assets/images/world-map-desktop.png" alt="world map" />
+        </picture>
+        <div>
+          <p>New York</p>
+          <p>London</p>
+          <p>Yokohama</p>
+          <p>Jakarta</p>
+        </div>
+      </sections>
+      <section class="locations__content container">
+        <div class="locations__content-text">
+          <h2>Your city not listed?</h2>
+          <p class="lexend-deca-regular">
+            If you’d like to see Scoot in your hometown, be sure to let us know.
+            We track requests and plan launches based on demand. Feel free to
+            message us by clicking the link or messaging us on social.
+          </p>
+        </div>
+        <button class="primary__btn">Message Us</button>
+      </section>
       <section class="sign">
         <h2>Sign up and Scoot off today</h2>
         <div class="sign__images">
