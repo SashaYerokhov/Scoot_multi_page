@@ -84,7 +84,7 @@
           <h1>Locations</h1>
         </div>
       </section>
-      <sections class="map container">
+      <section class="map container">
         <picture>
           <source
             media="(max-width: 440px)"
@@ -96,13 +96,28 @@
           />
           <img src="./assets/images/world-map-desktop.png" alt="world map" />
         </picture>
-        <div>
+
+        <!-- Каждый город в отдельном div -->
+        <div class="city new-york">
           <p>New York</p>
-          <p>London</p>
-          <p>Yokohama</p>
-          <p>Jakarta</p>
+          <div class="arrow"></div>
         </div>
-      </sections>
+
+        <div class="city london">
+          <p>London</p>
+          <div class="arrow"></div>
+        </div>
+
+        <div class="city yokohama">
+          <p>Yokohama</p>
+          <div class="arrow"></div>
+        </div>
+
+        <div class="city jakarta">
+          <p>Jakarta</p>
+          <div class="arrow"></div>
+        </div>
+      </section>
       <section class="locations__content container">
         <div class="locations__content-text">
           <h2>Your city not listed?</h2>
